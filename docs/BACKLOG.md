@@ -15,6 +15,13 @@ Nada aqui se perde; cada item volta na fase certa do roadmap.
   quando o tipo de contratação for **"Substituição"**. Hoje ele fica sempre visível.
 - Na tela de Avaliação do RH: o campo **"Motivo da devolução"** deve aparecer **somente**
   ao clicar em **"Devolver para a Filial"**. Hoje fica sempre visível.
+- Na tela da Medicina: o desdobramento do **INAPTO** (refazer? / quando / quais exames)
+  deve aparecer **somente** quando o resultado for "Inapto". Hoje fica sempre visível.
+- Na tela da Medicina, agendamento: os campos **local/data/horário de cada exame** ficam
+  ocultos e aparecem só ao marcar aquele exame; ao confirmar, o exame agendado ganha um **✓**.
+- Na tela da Medicina, ação final: **APTO** e **INAPTO-definitivo** -> "Finalizar processo"
+  (notifica Filial, RH e candidato; só muda o texto do aviso). Exceção: **INAPTO + refazer=sim**
+  NÃO finaliza, volta para o agendamento (loop). A ação/botão muda conforme o caso (JS).
 
 ## Sementes de banco de dados (Fase 1 — modelagem)
 - A tela revelou que "Funcionários da filial" é uma informação real e reutilizada

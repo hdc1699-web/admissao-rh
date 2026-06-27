@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Medicina do Trabalho</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; }
+        h1 { font-size: 22px; }
+        fieldset { margin-bottom: 20px; padding: 16px; }
+        legend { font-weight: bold; }
+        label { display: block; margin-top: 10px; }
+        input[type="text"], input[type="date"], input[type="time"] {
+            padding: 6px; margin-top: 4px; width: 100%; box-sizing: border-box; }
+        .status { display: inline-block; background: #ffe9b3; padding: 4px 10px;
+                  border-radius: 12px; font-size: 13px; }
+        .check { margin-top: 6px; font-weight: normal; }
+        .exame-bloco { border-top: 1px solid #eee; padding-top: 8px; margin-top: 8px; }
+        button { padding: 10px 16px; margin-top: 12px; border: none; border-radius: 6px;
+                 background: #2e7d32; color: #fff; }
+        .resumo { color: #555; }
+    </style>
+</head>
+
+<body>
+    <h1>Medicina do Trabalho</h1>
+    <p><span class="status">Aguardando agendamento</span></p>
+    <p class="resumo">Candidato: Maria Oliveira · Função: Operador · Filial Norte</p>
+
+    <!-- TRABALHO 1: agendar os exames. Ao confirmar, dispara WhatsApp ao colaborador (Fase 4). -->
+    <fieldset>
+        <legend>1. Agendamento dos exames</legend>
+
+        <p class="resumo">Cada exame tem local/data/horário próprios.</p>
+
+        <div class="exame-bloco">
+            <label class="check"><input type="checkbox" name="exame" value="raio-x"> Raio-X</label>
+            <input type="text" name="raio-x-local" placeholder="Local">
+            <input type="date" name="raio-x-data">
+            <input type="time" name="raio-x-horario">
+        </div>
+        <div class="exame-bloco">
+            <label class="check"><input type="checkbox" name="exame" value="sangue"> Exame de sangue</label>
+            <input type="text" name="sangue-local" placeholder="Local">
+            <input type="date" name="sangue-data">
+            <input type="time" name="sangue-horario">
+        </div>
+        <div class="exame-bloco">
+            <label class="check"><input type="checkbox" name="exame" value="audiometria"> Audiometria</label>
+            <input type="text" name="audiometria-local" placeholder="Local">
+            <input type="date" name="audiometria-data">
+            <input type="time" name="audiometria-horario">
+        </div>
+        <div class="exame-bloco">
+            <label class="check"><input type="checkbox" name="exame" value="consulta"> Consulta com médico do trabalho</label>
+            <input type="text" name="consulta-local" placeholder="Local">
+            <input type="date" name="consulta-data">
+            <input type="time" name="consulta-horario">
+        </div>
+
+        <button type="button">Confirmar agendamento e enviar WhatsApp</button>
+    </fieldset>
+
+    <!-- TRABALHO 2: registrar o veredito do médico. INAPTO abre o desdobramento abaixo.
+         Esses campos condicionais aparecem/somem via JS (backlog); na maquete ficam visíveis. -->
+    <fieldset>
+        <legend>2. Resultado médico</legend>
+
+        <label><input type="radio" name="resultado" value="apto"> Apto</label>
+        <label><input type="radio" name="resultado" value="inapto"> Inapto</label>
+
+        <label>Se inapto, vai refazer?</label>
+        <label><input type="radio" name="refazer" value="sim"> Sim</label>
+        <label><input type="radio" name="refazer" value="nao"> Não (encerra o processo)</label>
+
+        <label for="nova-data">Se vai refazer: quando?</label>
+        <input type="date" id="nova-data" name="nova-data">
+
+        <label>Quais exames refazer?</label>
+        <label class="check"><input type="checkbox" name="refazer-exame" value="raio-x"> Raio-X</label>
+        <label class="check"><input type="checkbox" name="refazer-exame" value="sangue"> Exame de sangue</label>
+        <label class="check"><input type="checkbox" name="refazer-exame" value="audiometria"> Audiometria</label>
+
+        <button type="button">Finalizar processo</button>
+    </fieldset>
+</body>
+</html>
