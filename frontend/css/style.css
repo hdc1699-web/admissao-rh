@@ -166,6 +166,17 @@ a { color: #ffe08a; }
 .voltar:hover { background: #0a261e; }
 .voltar img { width: 30px; height: 30px; }
 
+/* Tela de conclusao: icone de sucesso */
+.sucesso { text-align: center; margin-bottom: 14px; }
+.sucesso-icone {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: #1aa64b; color: #fff; font-size: 34px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 12px;
+}
+.passos { margin: 6px 0 0; padding-left: 20px; }
+.passos li { margin-top: 6px; }
+
 /* Linha do titulo com a setinha de voltar ao lado */
 .titulo-linha { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
 .titulo-linha h1 { margin: 0; }
