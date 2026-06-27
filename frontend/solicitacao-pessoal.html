@@ -3,80 +3,68 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Solicitação de Pessoal</title>
-    <style>
-        html { background: url('img/background.jpg') center / cover no-repeat fixed; }
-        body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; }
-        h1 { font-size: 22px; }
-        .logo { height: 72px; display: block; margin-bottom: 16px; }
-        fieldset { margin-bottom: 20px; padding: 16px; background: #fff; }
-        legend { font-weight: bold; }
-        label { display: block; margin-top: 12px; }
-        input[type="text"], input[type="file"], select { padding: 6px; margin-top: 4px; width: 100%; box-sizing: border-box; }
-        input[type="radio"] { width: auto; margin: 0 6px 0 0; }
-        button { padding: 10px 16px; margin-top: 12px; border: none; border-radius: 6px;
-                 background: #2e7d32; color: #fff; cursor: pointer; }
-        input[type="file"]::file-selector-button {
-            padding: 8px 14px; margin-right: 10px; border: none; border-radius: 6px;
-            background: #2e7d32; color: #fff; cursor: pointer; }
-        .vagas { background: #eef; padding: 10px; border-radius: 6px; }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <img class="logo" src="img/cooasgo-logo.png" alt="COOASGO">
-    <h1>Solicitação de Pessoal</h1>
+    <div class="painel">
+        <div class="logo-box"><img src="img/cooasgo-logo.png" alt="COOASGO"></div>
 
-    <p class="vagas">Vagas disponíveis nesta filial: <strong>3</strong> (valor de exemplo)</p>
+        <h1>Solicitação de Pessoal</h1>
 
-    <form>
-        <fieldset>
-            <legend>Dados da Solicitação</legend>
+        <p class="vagas">Vagas disponíveis nesta filial: <strong>3</strong> (valor de exemplo)</p>
 
-            <label for="filial">Filial</label>
-            <select id="filial" name="filial">
-                <option value="">Selecione...</option>
-                <option value="matriz">Matriz</option>
-                <option value="filial-norte">Filial Norte</option>
-                <option value="filial-sul">Filial Sul</option>
-            </select>
+        <form>
+            <fieldset>
+                <legend>Dados da Solicitação</legend>
 
-            <label for="solicitante">Quem está solicitando</label>
-            <input type="text" id="solicitante" name="solicitante">
-
-            <label for="setor">Setor</label>
-            <input type="text" id="setor" name="setor">
-
-            <label for="funcao">Função</label>
-            <input type="text" id="funcao" name="funcao">
-
-            <label>Tipo de contratação</label>
-            <label><input type="radio" name="tipo" value="nova"> Nova contratação</label>
-            <label><input type="radio" name="tipo" value="substituicao"> Substituição de mão de obra</label>
-
-            <div id="bloco-substituido" style="display: none">
-                <label for="substituido">Por quem? (quem vai sair)</label>
-                <select id="substituido" name="substituido">
-                    <option value="">Selecione o funcionário...</option>
-                    <option value="func-1">Ana Pereira</option>
-                    <option value="func-2">Carlos Souza</option>
-                    <option value="func-3">Marina Lima</option>
+                <label for="filial">Filial</label>
+                <select id="filial" name="filial">
+                    <option value="">Selecione...</option>
+                    <option value="matriz">Matriz</option>
+                    <option value="filial-norte">Filial Norte</option>
+                    <option value="filial-sul">Filial Sul</option>
                 </select>
-            </div>
-        </fieldset>
 
-        <fieldset>
-            <legend>Dados do Candidato</legend>
+                <label for="solicitante">Quem está solicitando</label>
+                <input type="text" id="solicitante" name="solicitante">
 
-            <label for="nome">Nome do candidato</label>
-            <input type="text" id="nome" name="nome">
+                <label for="setor">Setor</label>
+                <input type="text" id="setor" name="setor">
 
-            <label for="documentos">Documentos (imagem ou PDF)</label>
-            <input type="file" id="documentos" name="documentos" accept="image/*,.pdf">
-        </fieldset>
+                <label for="funcao">Função</label>
+                <input type="text" id="funcao" name="funcao">
 
-        <button type="submit">Enviar solicitação</button>
-    </form>
+                <label>Tipo de contratação</label>
+                <label class="check"><input type="radio" name="tipo" value="nova"> Nova contratação</label>
+                <label class="check"><input type="radio" name="tipo" value="substituicao"> Substituição de mão de obra</label>
+
+                <div id="bloco-substituido" style="display: none">
+                    <label for="substituido">Por quem? (quem vai sair)</label>
+                    <select id="substituido" name="substituido">
+                        <option value="">Selecione o funcionário...</option>
+                        <option value="func-1">Ana Pereira</option>
+                        <option value="func-2">Carlos Souza</option>
+                        <option value="func-3">Marina Lima</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Dados do Candidato</legend>
+
+                <label for="nome">Nome do candidato</label>
+                <input type="text" id="nome" name="nome">
+
+                <label for="documentos">Documentos (imagem ou PDF)</label>
+                <input type="file" id="documentos" name="documentos" accept="image/*,.pdf">
+            </fieldset>
+
+            <button type="submit">Enviar solicitação</button>
+        </form>
+    </div>
 
     <script>
         // "Por quem?" so aparece quando o tipo de contratacao for Substituicao.

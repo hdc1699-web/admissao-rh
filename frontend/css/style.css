@@ -1,0 +1,115 @@
+/* Estilo COOASGO: painel verde translucido sobre a imagem de fundo,
+   campos brancos arredondados. Cores em variaveis para mudar num lugar so. */
+:root {
+    --painel: rgba(22, 66, 55, 0.85);
+    --campo: #ffffff;
+    --texto: #1f2937;
+    --acao-texto: #14463a;
+    --amarelo: #f5b50a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    padding: 40px 16px;
+    min-height: 100vh;
+    /* url() no CSS e relativa a ESTE arquivo (css/), por isso ../img */
+    background: url('../img/background.jpg') center / cover no-repeat fixed;
+}
+
+.painel {
+    max-width: 520px;
+    margin: 0 auto;
+    background: var(--painel);
+    border-radius: 16px;
+    padding: 28px;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+}
+
+.logo-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+    margin-bottom: 22px;
+}
+.logo-box img { height: 110px; }
+
+h1 { font-size: 20px; margin: 0 0 16px; }
+
+fieldset {
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 18px;
+}
+legend { font-weight: 700; padding: 0 6px; }
+
+label { display: block; margin-top: 12px; font-size: 14px; }
+label.check { font-weight: normal; margin-top: 6px; }
+
+input[type="text"], input[type="date"], input[type="time"],
+input[type="file"], select, textarea {
+    width: 100%;
+    padding: 11px 12px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 8px;
+    background: var(--campo);
+    color: var(--texto);
+    font-size: 14px;
+    font-family: inherit;
+}
+input[type="radio"], input[type="checkbox"] { width: auto; margin-right: 6px; }
+input:focus, select:focus, textarea:focus { outline: 2px solid rgba(255, 255, 255, .7); }
+
+input[type="file"]::file-selector-button {
+    border: none; border-radius: 6px; padding: 8px 12px; margin-right: 10px;
+    background: var(--acao-texto); color: #fff; cursor: pointer;
+}
+
+button, .principal, .secundario {
+    width: 100%;
+    padding: 12px;
+    margin-top: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #fff;
+    color: var(--acao-texto);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+button:hover, .principal:hover { background: #eef3f1; }
+.secundario { background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, .6); }
+.secundario:hover { background: rgba(255, 255, 255, .12); }
+
+.status {
+    display: inline-block;
+    background: var(--amarelo);
+    color: #5a4500;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.vagas {
+    background: rgba(255, 255, 255, .15);
+    border-left: 4px solid var(--amarelo);
+    padding: 10px 14px;
+    border-radius: 8px;
+}
+
+.resumo { font-size: 14px; opacity: .9; }
+
+dl { margin: 0; }
+dt { font-weight: 700; margin-top: 10px; font-size: 13px; }
+dd { margin: 2px 0 0; }
+
+.exame-bloco { border-top: 1px solid rgba(255, 255, 255, .2); padding-top: 10px; margin-top: 10px; }
+
+a { color: #ffe08a; }
