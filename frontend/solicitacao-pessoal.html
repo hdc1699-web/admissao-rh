@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- Esta linha avisa ao navegador: "isto é um documento HTML moderno". -->
+<html lang="pt-BR">
+<!-- lang="pt-BR" diz que a página é em português do Brasil (ajuda corretor, leitores de tela, etc.) -->
+
+<head>
+    <!-- O <head> é a "ficha técnica" da página: coisas que o usuário NÃO vê na tela,
+         mas que o navegador precisa saber. -->
+
+    <meta charset="UTF-8">
+    <!-- charset UTF-8 = o "alfabeto" da página. É o que faz acento e ç aparecerem certo.
+         Sem isto, "Solicitação" viraria "SolicitaÃ§Ã£o". -->
+
+    <title>Solicitação de Pessoal</title>
+    <!-- O texto que aparece na ABA do navegador. -->
+
+    <!-- Por enquanto, um CSS mínimo só pra não ficar feio demais de ler.
+         CSS = a "decoração". Vamos separar isso num arquivo próprio mais pra frente. -->
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; }
+        h1 { font-size: 22px; }
+        fieldset { margin-bottom: 20px; padding: 16px; }
+        legend { font-weight: bold; }
+        label { display: block; margin-top: 12px; }
+        input, select { padding: 6px; margin-top: 4px; width: 100%; box-sizing: border-box; }
+        .vagas { background: #eef; padding: 10px; border-radius: 6px; }
+    </style>
+</head>
+
+<body>
+    <!-- O <body> é tudo que o usuário REALMENTE vê na tela. -->
+
+    <h1>Solicitação de Pessoal</h1>
+
+    <!-- "Vagas disponíveis" NÃO é um campo que se digita: é uma CONSULTA.
+         Por enquanto o número é MOCADO (falso, fixo). Na Fase 2 ele vem do banco. -->
+    <p class="vagas">Vagas disponíveis nesta filial: <strong>3</strong> (valor de exemplo)</p>
+
+    <!-- <form> agrupa todos os campos de um formulário. -->
+    <form>
+
+        <!-- <fieldset> agrupa campos relacionados. <legend> é o título do grupo.
+             Lembra os DOIS BLOCOS que você mesmo intuiu? Aqui estão eles. -->
+        <fieldset>
+            <legend>Dados da Solicitação</legend>
+
+            <!-- FILIAL: lista pré-definida (dropdown). Opções MOCADAS por enquanto. -->
+            <label for="filial">Filial</label>
+            <select id="filial" name="filial">
+                <option value="">Selecione...</option>
+                <option value="matriz">Matriz</option>
+                <option value="filial-norte">Filial Norte</option>
+                <option value="filial-sul">Filial Sul</option>
+            </select>
+
+            <!-- QUEM ESTÁ SOLICITANDO: texto livre. -->
+            <label for="solicitante">Quem está solicitando</label>
+            <input type="text" id="solicitante" name="solicitante">
+
+            <!-- SETOR: texto livre (no futuro pode virar dropdown). -->
+            <label for="setor">Setor</label>
+            <input type="text" id="setor" name="setor">
+
+            <!-- FUNÇÃO: texto livre. -->
+            <label for="funcao">Função</label>
+            <input type="text" id="funcao" name="funcao">
+
+            <!-- TIPO DE CONTRATAÇÃO: só pode ser UMA das duas opções -> "radio".
+                 (Mais pra frente, "Substituição" vai abrir o campo "quem vai sair".) -->
+            <label>Tipo de contratação</label>
+            <label><input type="radio" name="tipo" value="nova"> Nova contratação</label>
+            <label><input type="radio" name="tipo" value="substituicao"> Substituição de mão de obra</label>
+
+            <!-- "Por quem?" só faz sentido quando o tipo é "Substituição".
+                 POR ENQUANTO fica sempre visível. Fazê-lo aparecer apenas na
+                 substituição é a 1ª missão de JavaScript (camada de comportamento). -->
+            <label for="substituido">Por quem? (quem vai sair)</label>
+            <select id="substituido" name="substituido">
+                <option value="">Selecione o funcionário...</option>
+                <!-- Opções MOCADAS: na Fase 2 virão do banco, filtradas pela filial. -->
+                <option value="func-1">Ana Pereira</option>
+                <option value="func-2">Carlos Souza</option>
+                <option value="func-3">Marina Lima</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Dados do Candidato</legend>
+
+            <!-- NOME do candidato: texto livre. -->
+            <label for="nome">Nome do candidato</label>
+            <input type="text" id="nome" name="nome">
+
+            <!-- DOCUMENTOS: upload de arquivo (imagem ou PDF). -->
+            <label for="documentos">Documentos (imagem ou PDF)</label>
+            <input type="file" id="documentos" name="documentos" accept="image/*,.pdf">
+        </fieldset>
+
+        <!-- Botão de enviar. Por enquanto NÃO faz nada (é só maquete). -->
+        <button type="submit">Enviar solicitação</button>
+
+    </form>
+</body>
+</html>
