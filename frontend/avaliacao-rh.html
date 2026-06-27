@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Avaliação da Solicitação — RH</title>
+
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; }
+        h1 { font-size: 22px; }
+        fieldset { margin-bottom: 20px; padding: 16px; }
+        legend { font-weight: bold; }
+        .status { display: inline-block; background: #ffe9b3; padding: 4px 10px;
+                  border-radius: 12px; font-size: 13px; }
+        dl { margin: 0; }
+        dt { font-weight: bold; margin-top: 10px; }
+        dd { margin: 2px 0 0 0; }
+        .acoes label { display: block; font-weight: bold; margin-top: 8px; }
+        textarea { width: 100%; box-sizing: border-box; padding: 6px; margin: 4px 0 12px 0; }
+        .acoes button { padding: 10px 16px; margin-right: 8px; }
+        .principal { background: #2e7d32; color: #fff; border: none; border-radius: 6px; }
+        .secundario { background: #eee; border: 1px solid #ccc; border-radius: 6px; }
+    </style>
+</head>
+
+<body>
+
+    <h1>Avaliação da Solicitação — RH</h1>
+
+    <p><span class="status">Aguardando RH</span></p>
+    <p>Solicitação #001 · recebida em 27/06/2026</p>
+
+    <fieldset>
+        <legend>Dados da Solicitação</legend>
+        <dl>
+            <dt>Filial</dt>
+            <dd>Filial Norte</dd>
+
+            <dt>Solicitante</dt>
+            <dd>João da Silva</dd>
+
+            <dt>Setor</dt>
+            <dd>Produção</dd>
+
+            <dt>Função</dt>
+            <dd>Operador</dd>
+
+            <dt>Tipo de contratação</dt>
+            <dd>Substituição</dd>
+
+            <dt>Por quem (vai sair)</dt>
+            <dd>Carlos Souza</dd>
+        </dl>
+    </fieldset>
+
+    <fieldset>
+        <legend>Dados do Candidato</legend>
+        <dl>
+            <dt>Nome</dt>
+            <dd>Maria Oliveira</dd>
+
+            <dt>Documentos</dt>
+            <dd><a href="#">Ver documentos.pdf</a></dd>
+        </dl>
+    </fieldset>
+
+    <div class="acoes">
+        <label for="motivo">Motivo da devolução (preencher só se for devolver)</label>
+        <textarea id="motivo" name="motivo" rows="3"
+                  placeholder="Ex.: documento ilegível, falta o RG do candidato..."></textarea>
+
+        <button class="principal">Dar andamento — enviar para Medicina do Trabalho</button>
+        <button class="secundario">Devolver para a Filial</button>
+    </div>
+
+</body>
+</html>

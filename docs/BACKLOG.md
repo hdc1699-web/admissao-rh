@@ -13,6 +13,8 @@ Nada aqui se perde; cada item volta na fase certa do roadmap.
 ## Primeira missão de JavaScript (camada de comportamento)
 - Na tela de Solicitação de Pessoal: o campo **"Por quem?"** deve aparecer **somente**
   quando o tipo de contratação for **"Substituição"**. Hoje ele fica sempre visível.
+- Na tela de Avaliação do RH: o campo **"Motivo da devolução"** deve aparecer **somente**
+  ao clicar em **"Devolver para a Filial"**. Hoje fica sempre visível.
 
 ## Sementes de banco de dados (Fase 1 — modelagem)
 - A tela revelou que "Funcionários da filial" é uma informação real e reutilizada
