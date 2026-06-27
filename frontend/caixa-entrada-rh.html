@@ -12,10 +12,22 @@
     <div class="painel">
         <div class="logo-box"><img src="img/cooasgo-logo.png" alt="COOASGO"></div>
 
-        <h1>Solicitações — RH</h1>
-        <p class="resumo">3 solicitações aguardando avaliação</p>
+        <div class="titulo-linha">
+            <a class="voltar" href="menu.html" aria-label="Voltar"><img src="img/voltar.svg" alt="Voltar"></a>
+            <h1>Solicitações — RH</h1>
+        </div>
 
-        <div class="lista-item">
+        <label for="filtro-filial">Filtrar por filial</label>
+        <select id="filtro-filial">
+            <option value="todas">Todas as filiais</option>
+            <option value="matriz">Matriz</option>
+            <option value="filial-norte">Filial Norte</option>
+            <option value="filial-sul">Filial Sul</option>
+        </select>
+
+        <p class="resumo" id="contador">3 solicitações aguardando avaliação</p>
+
+        <div class="lista-item" data-filial="filial-norte">
             <div>
                 <div class="nome">Maria Oliveira</div>
                 <div class="sub">Filial Norte · Operador · recebida em 27/06/2026</div>
@@ -23,7 +35,7 @@
             <a class="acao" href="avaliacao-rh.html">Avaliar</a>
         </div>
 
-        <div class="lista-item">
+        <div class="lista-item" data-filial="matriz">
             <div>
                 <div class="nome">Pedro Santos</div>
                 <div class="sub">Matriz · Auxiliar Administrativo · recebida em 26/06/2026</div>
@@ -31,7 +43,7 @@
             <a class="acao" href="avaliacao-rh.html">Avaliar</a>
         </div>
 
-        <div class="lista-item">
+        <div class="lista-item" data-filial="filial-sul">
             <div>
                 <div class="nome">Juliana Costa</div>
                 <div class="sub">Filial Sul · Técnica Agrícola · recebida em 26/06/2026</div>
@@ -39,5 +51,22 @@
             <a class="acao" href="avaliacao-rh.html">Avaliar</a>
         </div>
     </div>
+
+    <script>
+        // Filtro por filial: mostra so os itens cuja data-filial bate com a escolha.
+        const filtro = document.getElementById('filtro-filial');
+        const itens = document.querySelectorAll('.lista-item');
+        const contador = document.getElementById('contador');
+
+        filtro.addEventListener('change', function () {
+            let visiveis = 0;
+            itens.forEach(function (item) {
+                const mostra = filtro.value === 'todas' || item.dataset.filial === filtro.value;
+                item.style.display = mostra ? 'flex' : 'none';
+                if (mostra) visiveis++;
+            });
+            contador.textContent = visiveis + ' solicitação(ões) aguardando avaliação';
+        });
+    </script>
 </body>
 </html>

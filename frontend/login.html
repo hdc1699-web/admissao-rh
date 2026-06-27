@@ -24,6 +24,13 @@
                 <button type="button" id="olho" class="olho" aria-label="Mostrar senha">👁</button>
             </div>
 
+            <label for="perfil">Perfil</label>
+            <select id="perfil" name="perfil">
+                <option value="filial">Filial</option>
+                <option value="rh">RH</option>
+                <option value="medicina">Medicina do Trabalho</option>
+            </select>
+
             <label class="check"><input type="checkbox" id="lembrar"> Lembrar-me</label>
 
             <button type="submit">Entrar</button>
@@ -45,9 +52,11 @@
         if (salvo) { usuario.value = salvo; lembrar.checked = true; }
 
         document.querySelector('form').addEventListener('submit', function (e) {
-            e.preventDefault(); // maquete ainda nao navega
+            e.preventDefault();
             if (lembrar.checked) localStorage.setItem('usuarioLembrado', usuario.value);
             else localStorage.removeItem('usuarioLembrado');
+            localStorage.setItem('perfil', document.getElementById('perfil').value);
+            window.location.href = 'menu.html'; // entra e vai para o menu
         });
     </script>
 </body>

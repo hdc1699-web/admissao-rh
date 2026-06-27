@@ -25,3 +25,9 @@ Nada aqui se perde; cada item volta na fase certa do roadmap.
 - A tela revelou que "Funcionários da filial" é uma informação real e reutilizada
   (alimenta tanto "vagas disponíveis" quanto a lista "Por quem?"). Vira tabela.
 - A lista de campos se dividiu naturalmente em **Solicitação** e **Candidato** -> duas entidades.
+
+## Admin e controle de acesso (Fase 3)
+- Painel **admin** (operado pelo Henrique) para cadastrar setores, funções e filiais,
+  e vincular cada usuário ao seu setor/filial.
+- Com isso o usuário **não seleciona setor manualmente** — o sistema já sabe pelo login,
+  reduzindo erro de digitação e evitando que um setor enxergue/atue em outro (autorização).

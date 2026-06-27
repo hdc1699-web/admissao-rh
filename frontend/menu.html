@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menu — COOASGO Admissão</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="painel estreito">
+        <div class="logo-box"><img src="img/cooasgo-logo.png" alt="COOASGO"></div>
+
+        <h1>O que você quer fazer?</h1>
+
+        <a class="opcao" href="solicitacao-pessoal.html">
+            Solicitação de pessoal
+            <span class="desc">Abrir um novo pedido de contratação</span>
+        </a>
+
+        <a class="opcao" id="link-processos" href="caixa-entrada-rh.html">
+            Verificar processos em andamento
+            <span class="desc">Acompanhar as solicitações já abertas</span>
+        </a>
+    </div>
+
+    <script>
+        // Roteia "processos em andamento" conforme o perfil escolhido no login.
+        const perfil = localStorage.getItem('perfil');
+        const link = document.getElementById('link-processos');
+        if (perfil === 'filial') link.href = 'processos-filial.html';
+        else if (perfil === 'medicina') link.href = 'caixa-entrada-medicina.html';
+        else link.href = 'caixa-entrada-rh.html';
+    </script>
+</body>
+</html>
