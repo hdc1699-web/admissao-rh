@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Acesso — COOASGO Admissão</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="painel estreito">
+        <div class="logo-box"><img src="img/cooasgo-logo.png" alt="COOASGO"></div>
+
+        <h1>Acesso</h1>
+
+        <form>
+            <label for="usuario">Usuário</label>
+            <input type="text" id="usuario" name="usuario" placeholder="Usuário">
+
+            <label for="senha">Senha</label>
+            <div class="campo-senha">
+                <input type="password" id="senha" name="senha" placeholder="Senha">
+                <button type="button" id="olho" class="olho" aria-label="Mostrar senha">👁</button>
+            </div>
+
+            <label class="check"><input type="checkbox" id="lembrar"> Lembrar-me</label>
+
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <script>
+        // Botao "olho": alterna entre esconder e mostrar a senha.
+        document.getElementById('olho').addEventListener('click', function () {
+            const senha = document.getElementById('senha');
+            senha.type = senha.type === 'password' ? 'text' : 'password';
+        });
+
+        // "Lembrar-me": guarda so o USUARIO no navegador (nunca a senha).
+        const usuario = document.getElementById('usuario');
+        const lembrar = document.getElementById('lembrar');
+
+        const salvo = localStorage.getItem('usuarioLembrado');
+        if (salvo) { usuario.value = salvo; lembrar.checked = true; }
+
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault(); // maquete ainda nao navega
+            if (lembrar.checked) localStorage.setItem('usuarioLembrado', usuario.value);
+            else localStorage.removeItem('usuarioLembrado');
+        });
+    </script>
+</body>
+</html>

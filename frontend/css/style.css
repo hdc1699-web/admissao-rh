@@ -51,7 +51,7 @@ legend { font-weight: 700; padding: 0 6px; }
 label { display: block; margin-top: 12px; font-size: 14px; }
 label.check { font-weight: normal; margin-top: 6px; }
 
-input[type="text"], input[type="date"], input[type="time"],
+input[type="text"], input[type="password"], input[type="date"], input[type="time"],
 input[type="file"], select, textarea {
     width: 100%;
     padding: 11px 12px;
@@ -113,3 +113,16 @@ dd { margin: 2px 0 0; }
 .exame-bloco { border-top: 1px solid rgba(255, 255, 255, .2); padding-top: 10px; margin-top: 10px; }
 
 a { color: #ffe08a; }
+
+/* Painel mais estreito, usado no Login */
+.painel.estreito { max-width: 360px; }
+
+/* Campo de senha com botao de "olho" (mostrar/ocultar) por cima */
+.campo-senha { position: relative; }
+.campo-senha input { padding-right: 44px; }
+.olho {
+    position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+    width: auto; margin: 0; padding: 4px 8px;
+    background: transparent; color: #555; font-size: 16px;
+}
+.olho:hover { background: transparent; }
