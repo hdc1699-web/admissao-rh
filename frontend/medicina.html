@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <title>Medicina do Trabalho</title>
     <style>
+        html { background: url('img/background.jpg') center / cover no-repeat fixed; }
         body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; }
         h1 { font-size: 22px; }
-        fieldset { margin-bottom: 20px; padding: 16px; }
+        .logo { height: 72px; display: block; margin-bottom: 16px; }
+        fieldset { margin-bottom: 20px; padding: 16px; background: #fff; }
         legend { font-weight: bold; }
         label { display: block; margin-top: 10px; }
         input[type="text"], input[type="date"], input[type="time"] {
@@ -23,6 +25,7 @@
 </head>
 
 <body>
+    <img class="logo" src="img/cooasgo-logo.png" alt="COOASGO">
     <h1>Medicina do Trabalho</h1>
     <p><span class="status">Aguardando agendamento</span></p>
     <p class="resumo">Candidato: Maria Oliveira · Função: Operador · Filial Norte</p>

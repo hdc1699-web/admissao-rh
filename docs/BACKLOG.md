@@ -11,8 +11,6 @@ Nada aqui se perde; cada item volta na fase certa do roadmap.
 - Disparo de WhatsApp para o colaborador com os exames agendados.
 
 ## Primeira missão de JavaScript (camada de comportamento)
-- Na tela de Solicitação de Pessoal: o campo **"Por quem?"** deve aparecer **somente**
-  quando o tipo de contratação for **"Substituição"**. Hoje ele fica sempre visível.
 - Na tela de Avaliação do RH: o campo **"Motivo da devolução"** deve aparecer **somente**
   ao clicar em **"Devolver para a Filial"**. Hoje fica sempre visível.
 - Na tela da Medicina: o desdobramento do **INAPTO** (refazer? / quando / quais exames)
