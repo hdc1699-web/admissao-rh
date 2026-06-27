@@ -126,3 +126,46 @@ a { color: #ffe08a; }
     background: transparent; color: #555; font-size: 16px;
 }
 .olho:hover { background: transparent; }
+
+/* Lista da caixa de entrada (padrao lista -> detalhe) */
+.lista-item {
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+.lista-item .nome { font-weight: 700; }
+.lista-item .sub { opacity: .85; font-size: 13px; margin-top: 3px; }
+.lista-item .acao {
+    width: auto; margin: 0; padding: 8px 16px;
+    background: #fff; color: var(--acao-texto); border-radius: 8px;
+    font-weight: 600; font-size: 14px; text-decoration: none; white-space: nowrap;
+}
+.lista-item .acao:hover { background: #eef3f1; }
+
+/* Setinha de voltar no topo do painel */
+.voltar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #0e3328;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+}
+.voltar:hover { background: #0a261e; }
+.voltar img { width: 30px; height: 30px; }
+
+/* Linha do titulo com a setinha de voltar ao lado */
+.titulo-linha { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.titulo-linha h1 { margin: 0; }
