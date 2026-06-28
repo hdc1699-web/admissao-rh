@@ -27,3 +27,9 @@ Nada aqui se perde; cada item volta na fase certa do roadmap.
   e vincular cada usuário ao seu setor/filial.
 - Com isso o usuário **não seleciona setor manualmente** — o sistema já sabe pelo login,
   reduzindo erro de digitação e evitando que um setor enxergue/atue em outro (autorização).
+
+## Visão futura (pós-MVP)
+- **Dashboard em Power BI** na conta admin, para controlar as contratações por indicadores
+  (volume, tempo médio do processo, aptos/inaptos, por filial/setor). Henrique já estuda Power BI.
+- **Processo demissional** na mesma aplicação, reaproveitando a máquina de estados da admissão.
+  Diferenças previstas: documentação específica e quantidade de exames (exame demissional).
