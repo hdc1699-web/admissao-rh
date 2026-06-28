@@ -10,13 +10,9 @@ Nada aqui se perde; cada item volta na fase certa do roadmap.
 - Disparo automático de e-mail a cada mudança de status (registro corporativo).
 - Disparo de WhatsApp para o colaborador com os exames agendados.
 
-## Primeira missão de JavaScript (camada de comportamento)
-- Na tela de Avaliação do RH: o campo **"Motivo da devolução"** deve aparecer **somente**
-  ao clicar em **"Devolver para a Filial"**. Hoje fica sempre visível.
-- Na tela da Medicina: o desdobramento do **INAPTO** (refazer? / quando / quais exames)
-  deve aparecer **somente** quando o resultado for "Inapto". Hoje fica sempre visível.
-- Na tela da Medicina, agendamento: os campos **local/data/horário de cada exame** ficam
-  ocultos e aparecem só ao marcar aquele exame; ao confirmar, o exame agendado ganha um **✓**.
+## Comportamento (JavaScript) pendente
+- Na tela da Medicina, agendamento: ao confirmar, o exame agendado ganha um **✓** de
+  confirmação (o aparecer/ocultar dos campos por exame já foi implementado).
 - Na tela da Medicina, ação final: **APTO** e **INAPTO-definitivo** -> "Finalizar processo"
   (notifica Filial, RH e candidato; só muda o texto do aviso). Exceção: **INAPTO + refazer=sim**
   NÃO finaliza, volta para o agendamento (loop). A ação/botão muda conforme o caso (JS).

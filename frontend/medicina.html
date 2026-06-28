@@ -16,36 +16,45 @@
             <a class="voltar" href="caixa-entrada-medicina.html" aria-label="Voltar"><img src="img/voltar.svg" alt="Voltar"></a>
             <h1>Medicina do Trabalho</h1>
         </div>
+
         <p><span class="status">Aguardando agendamento</span></p>
         <p class="resumo">Candidato: Maria Oliveira · Função: Operador · Filial Norte</p>
 
         <fieldset>
             <legend>1. Agendamento dos exames</legend>
-            <p class="resumo">Cada exame tem local/data/horário próprios.</p>
+            <p class="resumo">Marque o exame para informar local/data/horário.</p>
 
             <div class="exame-bloco">
                 <label class="check"><input type="checkbox" name="exame" value="raio-x"> Raio-X</label>
-                <input type="text" name="raio-x-local" placeholder="Local">
-                <input type="date" name="raio-x-data">
-                <input type="time" name="raio-x-horario">
+                <div class="exame-campos" style="display: none">
+                    <input type="text" name="raio-x-local" placeholder="Local">
+                    <input type="date" name="raio-x-data">
+                    <input type="time" name="raio-x-horario">
+                </div>
             </div>
             <div class="exame-bloco">
                 <label class="check"><input type="checkbox" name="exame" value="sangue"> Exame de sangue</label>
-                <input type="text" name="sangue-local" placeholder="Local">
-                <input type="date" name="sangue-data">
-                <input type="time" name="sangue-horario">
+                <div class="exame-campos" style="display: none">
+                    <input type="text" name="sangue-local" placeholder="Local">
+                    <input type="date" name="sangue-data">
+                    <input type="time" name="sangue-horario">
+                </div>
             </div>
             <div class="exame-bloco">
                 <label class="check"><input type="checkbox" name="exame" value="audiometria"> Audiometria</label>
-                <input type="text" name="audiometria-local" placeholder="Local">
-                <input type="date" name="audiometria-data">
-                <input type="time" name="audiometria-horario">
+                <div class="exame-campos" style="display: none">
+                    <input type="text" name="audiometria-local" placeholder="Local">
+                    <input type="date" name="audiometria-data">
+                    <input type="time" name="audiometria-horario">
+                </div>
             </div>
             <div class="exame-bloco">
                 <label class="check"><input type="checkbox" name="exame" value="consulta"> Consulta com médico do trabalho</label>
-                <input type="text" name="consulta-local" placeholder="Local">
-                <input type="date" name="consulta-data">
-                <input type="time" name="consulta-horario">
+                <div class="exame-campos" style="display: none">
+                    <input type="text" name="consulta-local" placeholder="Local">
+                    <input type="date" name="consulta-data">
+                    <input type="time" name="consulta-horario">
+                </div>
             </div>
 
             <button type="button">Confirmar agendamento e enviar WhatsApp</button>
@@ -57,20 +66,42 @@
             <label class="check"><input type="radio" name="resultado" value="apto"> Apto</label>
             <label class="check"><input type="radio" name="resultado" value="inapto"> Inapto</label>
 
-            <label>Se inapto, vai refazer?</label>
-            <label class="check"><input type="radio" name="refazer" value="sim"> Sim</label>
-            <label class="check"><input type="radio" name="refazer" value="nao"> Não (encerra o processo)</label>
+            <div id="bloco-inapto" style="display: none">
+                <label>Vai refazer?</label>
+                <label class="check"><input type="radio" name="refazer" value="sim"> Sim</label>
+                <label class="check"><input type="radio" name="refazer" value="nao"> Não (encerra o processo)</label>
 
-            <label for="nova-data">Se vai refazer: quando?</label>
-            <input type="date" id="nova-data" name="nova-data">
+                <label for="nova-data">Se vai refazer: quando?</label>
+                <input type="date" id="nova-data" name="nova-data">
 
-            <label>Quais exames refazer?</label>
-            <label class="check"><input type="checkbox" name="refazer-exame" value="raio-x"> Raio-X</label>
-            <label class="check"><input type="checkbox" name="refazer-exame" value="sangue"> Exame de sangue</label>
-            <label class="check"><input type="checkbox" name="refazer-exame" value="audiometria"> Audiometria</label>
+                <label>Quais exames refazer?</label>
+                <label class="check"><input type="checkbox" name="refazer-exame" value="raio-x"> Raio-X</label>
+                <label class="check"><input type="checkbox" name="refazer-exame" value="sangue"> Exame de sangue</label>
+                <label class="check"><input type="checkbox" name="refazer-exame" value="audiometria"> Audiometria</label>
+            </div>
 
             <button type="button">Finalizar processo</button>
         </fieldset>
     </div>
+
+    <script>
+        // Campos de cada exame so aparecem quando o exame e marcado.
+        document.querySelectorAll('.exame-bloco').forEach(function (bloco) {
+            const check = bloco.querySelector('input[type="checkbox"]');
+            const campos = bloco.querySelector('.exame-campos');
+            check.addEventListener('change', function () {
+                campos.style.display = check.checked ? 'block' : 'none';
+            });
+        });
+
+        // O desdobramento do INAPTO so aparece quando o resultado e Inapto.
+        const inapto = document.querySelector('input[name="resultado"][value="inapto"]');
+        const blocoInapto = document.getElementById('bloco-inapto');
+        document.querySelectorAll('input[name="resultado"]').forEach(function (r) {
+            r.addEventListener('change', function () {
+                blocoInapto.style.display = inapto.checked ? 'block' : 'none';
+            });
+        });
+    </script>
 </body>
 </html>

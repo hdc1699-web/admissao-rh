@@ -49,13 +49,27 @@
         </fieldset>
 
         <div class="acoes">
-            <label for="motivo">Motivo da devolução (preencher só se for devolver)</label>
-            <textarea id="motivo" name="motivo" rows="3"
-                      placeholder="Ex.: documento ilegível, falta o RG do candidato..."></textarea>
+            <div id="bloco-motivo" style="display: none">
+                <label for="motivo">Motivo da devolução</label>
+                <textarea id="motivo" name="motivo" rows="3"
+                          placeholder="Ex.: documento ilegível, falta o RG do candidato..."></textarea>
+            </div>
 
-            <button class="principal">Dar andamento — enviar para Medicina do Trabalho</button>
-            <button class="secundario">Devolver para a Filial</button>
+            <button class="principal" id="btn-andamento">Dar andamento — enviar para Medicina do Trabalho</button>
+            <button class="secundario" id="btn-devolver">Devolver para a Filial</button>
         </div>
     </div>
+
+    <script>
+        // O motivo so aparece quando o RH escolhe Devolver.
+        const blocoMotivo = document.getElementById('bloco-motivo');
+        document.getElementById('btn-devolver').addEventListener('click', function () {
+            blocoMotivo.style.display = 'block';
+            document.getElementById('motivo').focus();
+        });
+        document.getElementById('btn-andamento').addEventListener('click', function () {
+            blocoMotivo.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
